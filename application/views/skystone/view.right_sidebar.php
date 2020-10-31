@@ -88,12 +88,173 @@
                 }
                 echo '</div>';
             }
-            $i++;
-            if ($i == 1) {
-                break;
+
+     if(isset($data['voter']) && $data['voter']['is_sidebar_module'] == 1){
+                    echo '<div class="widget-right">
+							<div class="widget-title flex-c-c">
+								<h2>TOP <span class="widget-title-small">Voter</span></h2>
+							</div>
+								<script>
+								$(document).ready(function () {
+									App.populateSidebarRanking(\'votereward\', \'' . $srv . '\', ' . $data['voter']['count_in_sidebar'] . ');
+								});
+								</script>
+								<div class="widget-content-content">
+								<div id="top_votereward"></div>
+								</div>
+								<br/>
+							<span style="margin: 0 auto; display: block; text-align: center; margin-bottom: 1rem;">';
+                    foreach($this->website->server_list() as $key => $server){
+                        if($server['visible'] == 1 && isset($ranking_config[$key]['voter'])){
+                            echo '<a href="#" class="custom_button" id="switch_top_votereward_' . $key . '" data-count="' . $ranking_config[$key]['voter']['count_in_sidebar'] . '">' . $server['title'] . '</a> ';
+                        }
+                    }
+                    echo '</div>';
+                }
+                if(isset($data['killer']) && $data['killer']['is_sidebar_module'] == 1){
+                    echo '<div class="widget-right">
+							<div class="widget-title flex-c-c">
+								<h2>TOP <span class="widget-title-small">Killers</span></h2>
+							</div>
+							
+								<script>
+								$(document).ready(function () {
+									App.populateSidebarRanking(\'killer\', \'' . $srv . '\', ' . $data['killer']['count_in_sidebar'] . ');
+								});
+								</script>
+								<div class="widget-content-content">
+								<div id="top_killer"></div>
+								</div>
+								<br/>
+							<span style="margin: 0 auto; display: block; text-align: center; margin-bottom: 1rem;">';
+                    foreach($this->website->server_list() as $key => $server){
+                        if($server['visible'] == 1 && isset($ranking_config[$key]['killer'])){
+                            echo '<a href="#" class="custom_button" id="switch_top_killer_' . $key . '"  data-count="' . $ranking_config[$key]['killer']['count_in_sidebar'] . '">' . $server['title'] . '</a> ';
+                        }
+                    }
+                    echo '</div>';
+                }
+                if(isset($data['online']) && $data['online']['is_sidebar_module'] == 1){
+                    echo '<div class="widget-right">
+							<div class="widget-title flex-c-c">
+								<h2>TOP <span class="widget-title-small">Online</span></h2>
+							</div>
+							
+								<script>
+								$(document).ready(function () {
+									App.populateSidebarRanking(\'online\', \'' . $srv . '\', ' . $data['online']['count_in_sidebar'] . ');
+								});
+								</script>
+								<div class="widget-content-content">
+								<div id="top_online"></div>
+								</div>
+								<br/>
+							<span style="margin: 0 auto; display: block; text-align: center; margin-bottom: 1rem;">';
+                    foreach($this->website->server_list() as $key => $server){
+                        if($server['visible'] == 1 && isset($ranking_config[$key]['online'])){
+                            echo '<a href="#" class="custom_button" id="switch_top_online_' . $key . '" data-count="' . $ranking_config[$key]['online']['count_in_sidebar'] . '">' . $server['title'] . '</a> ';
+                        }
+                    }
+                    echo '</div>';
+                }
+                if(isset($data['bc']) && $data['bc']['is_sidebar_module'] == 1){
+                    echo '<div class="widget-right">
+							<div class="widget-title flex-c-c">
+								<h2>TOP <span class="widget-title-small"> BC</span></h2>
+							</div>
+							
+								<script>
+								$(document).ready(function () {
+									App.populateSidebarRanking(\'bc\', \'' . $srv . '\', ' . $data['bc']['count_in_sidebar'] . ');
+								});
+								</script>
+								<div class="widget-content-content">
+								<div id="top_bc"></div>
+								</div>
+								<br/>
+							<span style="margin: 0 auto; display: block; text-align: center; margin-bottom: 1rem;">';
+                    foreach($this->website->server_list() as $key => $server){
+                        if($server['visible'] == 1 && isset($ranking_config[$key]['bc'])){
+                            echo '<a href="#" class="custom_button" id="switch_top_bc_' . $key . '" data-count="' . $ranking_config[$key]['bc']['count_in_sidebar'] . '">' . $server['title'] . '</a> ';
+                        }
+                    }
+                    echo '</div>';
+                }
+                if(isset($data['ds']) && $data['ds']['is_sidebar_module'] == 1){
+                    echo '<div class="widget-right">
+							<div class="widget-title flex-c-c">
+								<h2>TOP <span class="widget-title-small"> DS</span></h2>
+							</div>
+							<div class="entry">
+								<script>
+								$(document).ready(function () {
+									App.populateSidebarRanking(\'ds\', \'' . $srv . '\', ' . $data['ds']['count_in_sidebar'] . ');
+								});
+								</script>
+								<div class="widget-content-content">
+								<div id="top_ds"></div>
+								</div>
+								<br/>
+							<span style="margin: 0 auto; display: block; text-align: center; margin-bottom: 1rem;">';
+                    foreach($this->website->server_list() as $key => $server){
+                        if($server['visible'] == 1 && isset($ranking_config[$key]['ds'])){
+                            echo '<a href="#" class="custom_button" id="switch_top_ds_' . $key . '" data-count="' . $ranking_config[$key]['ds']['count_in_sidebar'] . '">' . $server['title'] . '</a> ';
+                        }
+                    }
+                    echo '</div>';
+                }
+                if(isset($data['cc']) && $data['cc']['is_sidebar_module'] == 1){
+                    echo '<div class="widget-right">
+							<div class="widget-title flex-c-c">
+								<h2>TOP <span class="widget-title-small"> CC</span></h2>
+							</div>
+							
+								<script>
+								$(document).ready(function () {
+									App.populateSidebarRanking(\'cc\', \'' . $srv . '\', ' . $data['cc']['count_in_sidebar'] . ');
+								});
+								</script>
+								<div class="widget-content-content">
+								<div id="top_cc"></div>
+								</div>
+								<br/>
+							<span style="margin: 0 auto; display: block; text-align: center; margin-bottom: 1rem;">';
+                    foreach($this->website->server_list() as $key => $server){
+                        if($server['visible'] == 1 && isset($ranking_config[$key]['cc'])){
+                            echo '<a href="#" class="custom_button" id="switch_top_cc_' . $key . '" data-count="' . $ranking_config[$key]['cc']['count_in_sidebar'] . '">' . $server['title'] . '</a> ';
+                        }
+                    }
+                    echo '</div>';
+                }
+                if(isset($data['duels']) && $data['duels']['is_sidebar_module'] == 1){
+                    echo '<div class="widget-right">
+							<div class="widget-title flex-c-c">
+								<h2>TOP <span class="widget-title-small">Duelers</span></h2>
+							</div>
+							
+								<script>
+								$(document).ready(function () {
+									App.populateSidebarRanking(\'duels\', \'' . $srv . '\', ' . $data['duels']['count_in_sidebar'] . ');
+								});
+								</script>
+								<div class="widget-content-content">
+								<div id="top_duels"></div>
+								</div>
+								<br/>
+							<span style="margin: 0 auto; display: block; text-align: center; margin-bottom: 1rem;">';
+                    foreach($this->website->server_list() as $key => $server){
+                        if($server['visible'] == 1 && isset($ranking_config[$key]['duels'])){
+                            echo '<a href="#" class="custom_button" id="switch_top_duels_' . $key . '" data-count="' . $ranking_config[$key]['duels']['count_in_sidebar'] . '">' . $server['title'] . '</a> ';
+                        }
+                    }
+                    echo '</div>';
+                }
+                $i++;
+                if($i == 1){
+                    break;
+                }
             }
         }
-    }
     ?>
     <div class="widget-right" style="display: none">
         <div class="widget-title flex-c-c">
